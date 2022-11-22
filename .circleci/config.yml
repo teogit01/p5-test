@@ -230,15 +230,5 @@ workflows:
       - deploy-infrastructure:
           filters:
             branches:
-              only: [ master ]
-      - configure-infrastructure:
-          requires:
-            - deploy-infrastructure
-      - configure-cluster:
-          requires:
-            - configure-infrastructure
-            - upload-docker
-      - deploy-docker:
-          requires:
-            - configure-cluster
+              only: [ master ]      
 
