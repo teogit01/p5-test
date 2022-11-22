@@ -90,8 +90,8 @@ jobs:
               --tags project=${ENVIRONMENT_NAME}-project \
               --stack-name "${ENVIRONMENT_NAME}-eks-cluster" \
               --region ${AWS_DEFAULT_REGION} \
-              --parameter-overrides file://cloudformation/cluster-parameters.json \
-              --capabilities CAPABILITY_NAMED_IAM
+              --parameter-overrides file://cloudformation/cluster-parameters.json 
+              
           no_output_timeout: 15m
       - run:
           name: Ensure Nodegroup exists
@@ -101,8 +101,8 @@ jobs:
               --tags project=${ENVIRONMENT_NAME}-project \
               --stack-name "${ENVIRONMENT_NAME}-eks-nodegroup" \
               --region ${AWS_DEFAULT_REGION} \
-              --parameter-overrides file://cloudformation/nodegroup-parameters.json \
-              --capabilities CAPABILITY_NAMED_IAM
+              --parameter-overrides file://cloudformation/nodegroup-parameters.json
+              
       - run:
           name: Ensure management instances exists
           command: |
