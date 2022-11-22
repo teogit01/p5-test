@@ -230,5 +230,5 @@ workflows:
       - deploy-infrastructure:
           filters:
             branches:
-              only: [ master ]      
+              only: [ main ]      
 
