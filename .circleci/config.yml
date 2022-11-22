@@ -226,14 +226,7 @@ jobs:
 
 workflows:
   default:
-    jobs:
-      - test-build
-      - upload-docker:
-          requires:
-            - test-build
-          filters:
-            branches:
-              only: [ master ]
+    jobs:    
       - deploy-infrastructure:
           filters:
             branches:
