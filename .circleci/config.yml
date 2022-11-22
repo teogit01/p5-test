@@ -68,7 +68,7 @@ jobs:
           name: Ensure EKS network exists
           command: |
             aws cloudformation deploy \
-              --template-file cloudformation/network.yml \
+              --template-file ./cloudformation/network.yml \
               --tags project=${ENVIRONMENT_NAME}-project \
               --stack-name "${ENVIRONMENT_NAME}-eks-network" \
               --region ${AWS_DEFAULT_REGION} \
@@ -77,7 +77,7 @@ jobs:
           name: Ensure EKS Cluster exists
           command: |
             aws cloudformation deploy \
-              --template-file cloudformation/cluster.yml \
+              --template-file ./cloudformation/cluster.yml \
               --tags project=${ENVIRONMENT_NAME}-project \
               --stack-name "${ENVIRONMENT_NAME}-eks-cluster" \
               --region ${AWS_DEFAULT_REGION} \
