@@ -71,8 +71,8 @@ jobs:
       - run:
           name: Login to ASW
           command: |
-              aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-              aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+              aws configure set aws_access_key_id 'AKIA53TJQC36HP4HMMEZ'
+              aws configure set aws_secret_access_key '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'
               aws configure set default.region $AWS_DEFAULT_REGION
       - run:
           name: Ensure EKS network exists
